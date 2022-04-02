@@ -12,11 +12,14 @@ final class Generator {
 
     public static void main(String[] args) throws IOException {
 
-        String wordsFilePath = "src/main/resources/complexPrepositions.txt";
-        String packageName = "com.github.stawirej.fluentapi.prepositions.complex";
+        System.out.println("Generating fluent api classes ...");
+
+        String wordsFilePath = args[0];
+        String packageName = args[1];
+        String outputFolder = args[2];
+
         String templateConsumerFilePath = "src/main/resources/Consumer.template";
         String templateFunctionFilePath = "src/main/resources/Function.template";
-        String outputFolder = "src/main/output";
 
         List<String> words = Files.readAllLines(Paths.get(wordsFilePath));
         String templateConsumer = readTemplate(templateConsumerFilePath);
@@ -24,6 +27,8 @@ final class Generator {
 
         createInterfaceFile(templateConsumer, packageName, words, outputFolder, FunctionType.Consumer);
         createInterfaceFile(templateFunction, packageName, words, outputFolder, FunctionType.Function);
+
+        System.out.println("Generating fluent api classes done in: " + outputFolder);
     }
 
     private static void createInterfaceFile(

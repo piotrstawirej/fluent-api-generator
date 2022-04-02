@@ -45,6 +45,7 @@
         <maven.surefire.plugin.version>2.22.2</maven.surefire.plugin.version>
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
         <maven.bundle.plugin.version>4.2.1</maven.bundle.plugin.version>
+        <maven.jar.plugin.version>3.2.2</maven.jar.plugin.version>
         <assertj.core.version>3.22.0</assertj.core.version>
         <junit.version>5.8.2</junit.version>
         <java.version>8</java.version>
@@ -83,6 +84,21 @@
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven.jar.plugin.version}</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>com.github.stawirej.fluentapigenerator.Generator</mainClass>
+                        </manifest>
+                    </archive>
                 </configuration>
             </plugin>
 
