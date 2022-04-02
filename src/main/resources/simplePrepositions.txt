@@ -66,7 +66,6 @@ pro
 qua
 sans
 save
-short
 since
 than
 through
