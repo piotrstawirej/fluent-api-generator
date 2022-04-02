@@ -1,4 +1,4 @@
-package com.github.stawirej.fluentapigenerator;
+package io.github.stawirej.fluentapigenerator;
 
 /**
  * @author Piotr Stawirej

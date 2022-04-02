@@ -1,4 +1,4 @@
-package com.github.stawirej.fluentapigenerator;
+package io.github.stawirej.fluentapigenerator;
 
 import java.io.IOException;
 import java.nio.file.Files;
