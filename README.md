@@ -17,3 +17,9 @@ mvn clean install
 ```bash
 ./generate.sh
 ```
+
+## Clean output
+
+```bash
+./clean.sh
+```
