@@ -3,7 +3,3 @@ apart
 aside
 away
 hence
-notwithstanding
-on
-short
-through
